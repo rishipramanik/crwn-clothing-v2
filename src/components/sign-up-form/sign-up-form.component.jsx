@@ -7,7 +7,7 @@ import {
 import Button from "../button/button.component";
 import FormInput from "../form-input/form-input.component";
 
-import { UserContext } from "../../contexts/user.context";
+// import { UserContext } from "../../contexts/user.context";
 
 import "./sign-up-form.styles.scss"
 
@@ -22,7 +22,7 @@ function SignUpForm() {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
-  const { setCurrentUser } = useContext(UserContext)
+  // const { setCurrentUser } = useContext(UserContext)
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -46,7 +46,7 @@ function SignUpForm() {
         email,
         password
       );
-      setCurrentUser(user);
+      // setCurrentUser(user);
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
     } catch (error) {
